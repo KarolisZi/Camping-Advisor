@@ -1,0 +1,43 @@
+<% layout('layouts/boilerplate') %>
+<div class="row">
+	<h1 class="text-center">New Campground</h1>
+	<div class="col-6 offset-3">
+		<form action="/campgrounds" method="POST" class = 'validated-form' enctype="multipart/form-data" novalidate>
+			<div class="mb-3">
+				<label class="form-label" for="title"> Campground Title:</label>
+				<input class="form-control" type="text" name="campground[title]" id="title" placeholder="Title" required/>
+				<div class="invalid-feedback">Please enter the campground title.</div>
+			</div>
+			<div class="mb-3">
+				<label class="form-label" for="location">Campground Location:</label>
+				<input class="form-control" type="text" name="campground[location]" id="location" placeholder="Location" required/>
+				<div class="invalid-feedback">Please enter the campground location.</div>
+			</div>
+			<div class="mb-3">
+				<label class="form-label" for="price"> Campground Price</label>
+				<div class="input-group">
+					<span class="input-group-text" id="pridce_label"">$</span>
+					<input class="form-control" type="text" name="campground[price]" id="price" placeholder="0.00" aria-describedby="price_label" aria-label="Campground price" required/>
+					<div class="invalid-feedback">Please enter the campground price.</div>
+				</div>
+			</div>
+			<div class="mb-3">
+				<label class="form-label" for="description"> Campground Description:</label>
+				<textarea class="form-control" type="text" name="campground[description]" id="description" placeholder="Description" required></textarea>
+				<div class="invalid-feedback">Please enter the campground description.</div>
+			</div>
+			<div class="mb-3">
+				<label class="form-label" for="image"> Campground Images </label>
+				<input class="form-control" type="file" name="image" id="image" placeholder="Image files" multiple/>
+				<div class="invalid-feedback">Please attach a campground image</div>
+			</div>
+			<div class="mb-3">
+				<button class="btn btn-success">Add Campground</button>
+			</div>
+		</form>
+		<a href="/campgrounds">Cancel</a>
+	</div>
+</div>
+
+
+
